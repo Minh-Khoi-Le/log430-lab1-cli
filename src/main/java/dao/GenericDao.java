@@ -31,4 +31,22 @@ public class GenericDao<T, ID extends Serializable> {
             return session.createQuery("from " + entityClass.getSimpleName(), entityClass).list();
         }
     }
+
+    public void delete(T entity) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction tx = session.beginTransaction();
+            session.remove(entity);
+            tx.commit();
+        } 
+    }
+
+    public void update(T entity) {
+    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        Transaction tx = session.beginTransaction();
+        session.merge(entity);
+        tx.commit();
+    }
+}
+
+
 }
