@@ -1,0 +1,17 @@
+# Maven / Java
+/target/
+*.class
+*.log
+
+# IDE
+*.iml
+.idea/
+*.swp
+.vscode/
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Config temporaire
+*.env

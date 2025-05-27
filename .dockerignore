@@ -1,0 +1,10 @@
+# Ignore IDE & OS files
+*.iml
+.idea/
+*.swp
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore Maven output
+target/
