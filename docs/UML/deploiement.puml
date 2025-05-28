@@ -1,0 +1,12 @@
+@startuml Diagramme de déploiement
+title Diagramme de déploiement - Caisse CLI
+node "Machine Caisse 1" {
+  component "CaisseApp"
+}
+node "Serveur DB" {
+  database "PostgreSQL"
+}
+
+"CaisseApp" -down-> "PostgreSQL"
+@enduml
+ 
