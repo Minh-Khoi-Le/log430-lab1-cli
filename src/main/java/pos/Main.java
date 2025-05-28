@@ -134,9 +134,9 @@ public class Main {
             for (Produit p : produits) {
                 System.out.println("- ID : " + p.getId() + " | " + p.getNom() + " | Prix : " + p.getPrix() + " | Stock : " + p.getQuantite());
             }
-            System.out.print("ID produit (ou 'fin' pour terminer) : ");
+            System.out.print("Entrez ID du produit ou terminer : ");
             String input = sc.nextLine();
-            if (input.equalsIgnoreCase("fin")) break;
+            if (input.equalsIgnoreCase("terminer")) break;
             Long id = Long.parseLong(input);
             Produit prod = produitDao.findById(id);
             if (prod == null) {
@@ -152,9 +152,9 @@ public class Main {
             produitsAchetes.add(prod);
             quantites.add(qte);
             total += prod.getPrix() * qte;
-            System.out.print("Ajouter un autre produit ? (o/n) : ");
+            System.out.print("Continuer l'achat (c) ou quitter (q) ? ");
             String rep = sc.nextLine();
-            ajouter = rep.equalsIgnoreCase("o");
+            ajouter = rep.equalsIgnoreCase("c");
         }
 
         // Mise à jour du stock
